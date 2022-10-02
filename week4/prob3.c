@@ -15,6 +15,7 @@ int main(){
     int i =0;
     fscanf(fp, "%d %d ", &m, &n);
     char *save[MAX][MAX];
+    int max_lengths[MAX];
     while(fgets(buffer, MAX, fp) != NULL){
         token = strtok(buffer, "&");
         save[i][0] = strdup(token);
@@ -24,22 +25,42 @@ int main(){
         }
         i += 1;
     }
-    // 필요없는 공백문자 제거하기 + 이쁘게 출력하기
-    // 맨앞, 맨뒤 공백 제거하기
+
     for(int i = 0; i < m; i++){
         for(int j = 0; j < n; j++){
             delete_space(save[i][j], strlen(save[i][j]));
         }
     }
-     for(int i = 0; i < m; i++){
-        for(int j = 0; j < n; j++){
-            printf("%s", save[i][j]);;
+
+    for(int i = 0; i < m; i++){
+        int max_len = strlen(save[0][i]);
+        for(int j = 0; j < n; j ++){
+            if(max_len < strlen(save[j][i])){
+                max_len = strlen(save[j][i]);
+            }
         }
-        printf("\n");
+        max_lengths[i] = max_len;
+    }
+    FILE *newFp = fopen("output.txt", "w");
+    for(int i = 0; i < m; i++){
+        for(int j = 0; j < n - 1; j++){
+            fprintf(newFp, "%s", save[i][j]);
+            int tmp = max_lengths[j] - strlen(save[i][j]);
+            for(int k = 0; k < tmp; k ++) fprintf(newFp, " ");
+        }
+        fprintf(newFp, "%s", save[i][n - 1]);
     }
     fclose(fp);
     return 0;
 }
+// 불필요한 공백문자 제거 함수.
 void delete_space(char *str, int size){
-    while(*str == " ") str++;
+    int i = 0, j = 0;
+    while(j < size){
+        if(!isspace(str[j]) || j > 0 && !isspace(str[j - 1])){
+            str[i ++] = str[j];
+        }
+        j ++;
+    }
+    str[i] = '\0';
 }
