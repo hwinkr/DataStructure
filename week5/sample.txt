@@ -1,0 +1,32 @@
+Hello world! 
+ 
+Thank you for taking the 2021 Stack Overflow Developer Survey, 
+the longest running survey of software developers (and anyone else who codes!) on Earth. 
+ 
+As in previous years, anonymized results of the survey will be made publicly 
+available under the Open Database License, where anyone can download and analyze the data. 
+On that note, throughout the survey, certain answers you and your peers give will be 
+treated as personally identifiable information, and therefore kept out of 
+the anonymized results file. We'll call out each of those in the survey with 
+a note saying "This information will be kept private." 
+ 
+There are six sections in this survey. The 2nd, 3rd, and 4th sections will 
+appear in a random order.
+   1. Basic Information
+   2. Education, Work, and Career
+   3. Technology and Tech Culture
+   4. Stack Overflow Usage + Community
+   5. Demographic Information 
+   6. Final Questions
+ 
+Most questions in this survey are optional. Required questions are 
+marked with *. This anonymous survey will take about 10 minutes to complete. 
+We encourage you to complete it in one sitting.
+
+If you use security or ad-blocking plugins, you may see error messages
+Our third-party software provider, Qualtrics, does not work well with 
+certain ad blockers and security software. To avoid error messages that 
+prevent you from taking the survey, please try specifically unblocking 
+Qualtrics in your plugin or pausing the plugin while you take the survey. 
+ 
+To begin, click Next.
