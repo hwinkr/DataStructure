@@ -4,7 +4,9 @@
 #include<string.h>
 #include<stdbool.h>
 #define MAX 100
+
 int isMo(char target);
+
 int main(){
     char *consonant[MAX];
     int cons_size = 0;
@@ -41,12 +43,16 @@ int main(){
             idx = i;
         }
     }
+
     printf("%s", consonant[idx]);
     printf("hi");
+
     return 0;
 }
+
 int isMo(char target){
     char collection[5] = {'a', 'e', 'i', 'o', 'u'};
     for(int i = 0; i < 5; i ++) if(target == collection[i]) return 1;
+
     return 0;
 }

@@ -1,3 +1,5 @@
+// 모든 테스트 입력에 대한 출력이 동일합니다.
+
 #include<stdio.h>
 #include<string.h>
 #include<stdlib.h>
