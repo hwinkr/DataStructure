@@ -21,6 +21,7 @@ void handle_add();
 void process_command();
 void handle_load();
 void handle_search();
+void handle_play();
 
 int main(){
     initiallize();
@@ -82,12 +83,17 @@ void handle_add(){
     add_song(artist, title, path);
 }
 
+void handle_play(){
+    char *id_str = strtok(NULL, " ");
+    int index = atoi(id_str);
+    play(index);
+}
+
 void process_command(){
     char command_line[BUFFER_LENGTH];
     char *command;
 
-    while (1)
-    {
+    while (1){
         printf("$ ");
         if (read_line(stdin, command_line, BUFFER_LENGTH) <= 0)
             continue;
@@ -100,6 +106,8 @@ void process_command(){
             status();
         }else if (strcmp(command, "search") == 0){
             handle_search();
+        }else if (strcmp(command, "play") == 0){
+            handle_play();
         }else if (strcmp(command, "exit") == 0){
             break;
         }
